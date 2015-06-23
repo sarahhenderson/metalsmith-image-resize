@@ -1,7 +1,7 @@
 {
-  "name": "metalsmith-tags",
+  "name": "metalsmith-image-resize",
   "version": "1.0.0",
-  "description": "Metalsmith plugin to generate tag pages based on file metadata.",
+  "description": "Metalsmith plugin to resize images",
   "repository": {
     "type": "git",
     "url": "https://github.com/sarahhenderson/metalsmith-image-resize"
