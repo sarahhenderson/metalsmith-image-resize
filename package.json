@@ -1,0 +1,40 @@
+{
+  "name": "metalsmith-tags",
+  "version": "1.0.0",
+  "description": "Metalsmith plugin to generate tag pages based on file metadata.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarahhenderson/metalsmith-image-resize"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build && mocha --compilers coffee:coffee-script/register -R spec --ui bdd",
+    "build": "coffee -o lib src/plugin.coffee",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "metalsmith",
+    "plugin",
+    "archive",
+    "collection",
+    "posts"
+  ],
+  "author": "Sarah Henderson",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "coffee-script": "^1.9.3",
+    "metalsmith": "^1.7.0",
+    "mocha": "^2.2.5",
+    "image-size": "^0.3.5",
+    "rimraf": "^2.4.0"
+  },
+  "dependencies": {
+    "async": "^1.2.1",
+    "gm": "^1.18.1",
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3",
+    "multimatch": "^2.0.0",
+    "slugify": "^0.1.1"
+  }
+}
