@@ -7,7 +7,7 @@ module.exports = (options) ->
    
    options ?= {}
    defaults = 
-      pattern: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg']
+      pattern: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif']
       width: 1024
       height: null
       exact: false
