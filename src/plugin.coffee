@@ -4,18 +4,18 @@ async    = require 'async'
 multimatch = require('multimatch')
 
 module.exports = (options) ->
-   
+
    options ?= {}
-   defaults = 
+   defaults =
       pattern: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif']
       width: 1024
       height: null
       exact: false
-   
+
    _.defaults options, defaults
-   
+
    (files, metalsmith, next) ->
-      
+
       filenames = _.keys(files)
       matched = multimatch(filenames, options.pattern)
 
@@ -36,11 +36,11 @@ module.exports = (options) ->
 
       resizeImage = (file, image, meta, done) ->
          if meta.resizeNeeded and options.exact
-            image.resize(options.width, options.height, "!") 
+            image.resize(options.width, options.height, "!")
          else
-            image.resize(options.width, options.height) 
+            image.resize(options.width, options.height, ">") 
          done(null, file, image, meta)
-         
+
       outputImage = (file, image, meta, done) ->
          done(null, file, image, meta) if not meta.resizeNeeded
          image.toBuffer meta.format, (err, buffer) ->
@@ -52,7 +52,7 @@ module.exports = (options) ->
          file = files[filename]
          image = gm(file.contents, filename)
          meta = {}
-         
+
          async.waterfall [
             (done) -> done(null, file, image, meta)
             getSize
