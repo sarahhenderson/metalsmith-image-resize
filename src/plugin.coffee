@@ -1,5 +1,5 @@
 _        = require 'lodash'
-gm       = require 'gm'
+gm       = (require 'gm').subClass({ imageMagick: true })
 async    = require 'async'
 multimatch = require('multimatch')
 
